@@ -18,146 +18,228 @@ tags:
 created: '2023-07-19'
 modified: '2023-07-19'
 
-# Navigating Change
-version:
-    current: 'http://example.com/next'
-    next: 'http://example.com/next'
-    previous: 'http://example.com/next'
+define:
 
-# Development
-# Staging
-# Production
-environments: 
+  # Navigating Change
+  version:
+      current: 'http://example.com/next'
+      next: 'http://example.com/next'
+      previous: 'http://example.com/next'
+
+  source:
+
+    - type: workspace
+      title: Postman Workspace
+      url: 'https://example.com/private-workspace'   
+      
+    - type: repository
+      title: GitHub Repository
+      url: 'https://github.com/repo'   
+
+  # The machine readable contract for the API
+  contracts:
+
+    openapi:
+      
+      - version: 3.1
+        title: Example API
+        url: https://example.com/openapi    
+
+    asyncapi:
+      
+      - version: 2.0
+        title: Example API
+        url: https://example.com/asyncapi              
+
+  # Development
+  # Staging
+  # Production
+  environments: 
 
     # Environment for development
-    - name: Development
+    development:
+
+      name: Development
       url: 'https://www.postman.com/environment'  
       variables:
           base_url: 'http://example.com/development'       
           api_key: 'xe3847d3J78393jkdm1123'  
 
     # Environment for production
-    - name: Production
-      url: 'https://www.postman.com/environment'  
-      variables:
-          base_url: 'http://example.com/production'       
-          api_key: 'xe3847d3J78393jkdm1123'                
+    staging:
 
-# Design
-# Pre-Release    
-# Active
-# Recommended
-# Retired
-# Deprecated
-maturity: 'Active'
+        name: Staging
+        url: 'https://www.postman.com/environment'  
+        variables:
+            base_url: 'http://example.com/staging'       
+            api_key: 'xe3847d3J78393jkdm1123'                
 
-# Public
-# Internal
-# Group
-# Partner
-visibility: 'Internal'
 
-# All Mocks
-mocks:
+    # Environment for production
+    production:
 
-    label: Mocking
-    elements:              
+        name: Production
+        url: 'https://www.postman.com/environment'  
+        variables:
+            base_url: 'http://example.com/production'       
+            api_key: 'xe3847d3J78393jkdm1123'                
 
-        - type: sandbox
-          title: Mock Server
-          url: 'https://example.com/mock'
-          collection: 'https://www.postman.com/collection'        
+  # Design
+  # Pre-Release    
+  # Active
+  # Recommended
+  # Retired
+  # Deprecated
+  maturity: 'Active'
 
-# Documentation
-documentation:
+  # Public
+  # Internal
+  # Group
+  # Partner
+  visibility: 'Internal'
 
-    label: Docs
-    guidance: http://example.com/guidance
-    elements:
+# Designing before we develop
+design:
 
-        # Reference Documentation
-        - type: reference
-          title: Reference Documentation
-          url: 'https://example.com/documentation'
-          collection: 'https://www.postman.com/collection'
+  # All Mocks
+  mock:           
 
-        # Onboarding Documentation
-        - type: onboarding
-          title: Onboarding Documentation
-          url: 'https://example.com/documentation'
-          collection: 'https://www.postman.com/collection'                  
+    - type: sandbox
+      title: Mock Server
+      url: 'https://example.com/mock'
+      collection: 'https://www.postman.com/collection'        
 
-        # Workflow Documentation
-        - type: workflow
-          title: Business Workflow Documentation
-          url: 'https://example.com/documentation'
-          collection: 'https://www.postman.com/collection'
+  # Documentation
+  document:
+
+    # Reference Documentation
+    - type: reference
+      title: Reference Documentation
+      url: 'https://example.com/documentation'
+      collection: 'https://www.postman.com/collection'
+
+    # Onboarding Documentation
+    - type: onboarding
+      title: Onboarding Documentation
+      url: 'https://example.com/documentation'
+      collection: 'https://www.postman.com/collection'                  
+
+    # Workflow Documentation
+    - type: workflow
+      title: Business Workflow Documentation
+      url: 'https://example.com/documentation'
+      collection: 'https://www.postman.com/collection'
 
 # Deployment
-deployment:
+develop:         
 
-    label: Publishing
-    guidance: http://example.com/guidance
-    elements:            
+    # GitHub Repository
+    - type: github
+      title: Github Repository
+      branch: master
+      url: 'https://github.com/org/repo'
+      sync: true
 
-        # GitHub Repository
-        - type: github
-          title: Github Repository
-          url: 'https://github.com/org/repo'
-          sync: true
+    # Pipeline
+    - type: github-action
+      title: Github Action
+      url: 'https://github.com/org/repo/actions'       
 
-        # Pipeline
-        - type: github-action
-          title: Github Action
-          url: 'https://github.com/org/repo/actions'       
-
-        # Gateway
-        - type: aws-api-gateway
-          title: AWS API Gateway
-          url: ' https://uab3sjk0mna.execute-api.us-east-1.amazonaws.com'            
-          sync: true
+    # Gateway
+    - type: aws-api-gateway
+      title: AWS API Gateway
+      region: us-east1
+      url: ' https://uab3sjk0mna.execute-api.us-east-1.amazonaws.com'            
+      sync: true
 
 # Management
-management:
+manage:
 
-    label: Manage
-    guidance: http://example.com/guidance
-    elements:     
+  onboarding:
 
-        # Onboarding
-        - type: onboarding
-          title: Login / Registration
-          url: 'https://example.com/login'                           
+    # Onboarding
+    - type: access
+      title: Login / Registration
+      url: 'https://example.com/login'                           
 
-        # Plan
-        - type: aws-api-gateway-plan
-          title: Plan
-          url: 'https://console.aws.amazon.com/apigateway/home?#/usage-plans/859pid'                              
+    # Plan
+    - type: aws-api-gateway-plan
+      title: Plan
+      url: 'https://console.aws.amazon.com/apigateway/home?#/usage-plans/859pid'                              
 
-# SDKs
-sdks:
+  # SDKs
+  sdks:
 
-    label: SDKs
-    guidance: http://example.com/guidance
-    elements:     
+      label: SDKs
+      guidance: http://example.com/guidance
+      elements:     
 
-        # Python
-        - type: python
-          title: Python Library
-          url: 'https://github.com/sdks/python'                           
+          # Python
+          - type: python
+            title: Python Library
+            url: 'https://github.com/sdks/python'                           
 
-        # Node.js
-        - type: node.js
-          title: Node.js Library
-          url: 'https://github.com/sdks/nodejs'   
+          # Node.js
+          - type: node.js
+            title: Node.js Library
+            url: 'https://github.com/sdks/nodejs'   
 
-        # Go
-        - type: go
-          title: Go Library
-          url: 'https://github.com/sdks/go'                        
+          # Go
+          - type: go
+            title: Go Library
+            url: 'https://github.com/sdks/go'   
 
+  # Milestones for the API (Achieved and Target)
+  milestones:
+
+      # Design
+      - type: design
+        description: 'Design agreed upon by stakeholders.'
+        date: '2021-05-01'
+
+      # Design Review
+      - type: design-review
+        description: 'Went through design review.'
+        date: '2021-06-01'          
+
+      # Staging
+      - type: staging
+        description: 'Left staging phase of development.'
+        date: '2021-07-01'
+
+      # Security Review
+      - type: security-review
+        description: 'Went through security review.'
+        date: '2021-06-01'           
+
+      # Active
+      - type: active
+        description: 'Put into production as active API.'
+        date: '2021-07-15'   
+
+      # Retire
+      - type: retire
+        description: 'Planned retirement date.'
+        date: '2025-07-15'                            
+
+      # Deprecation
+      - type: deprecation
+        description: 'Planned deprecation date.'
+        date: '2025-12-15'
+
+  # Managing change
+  changelog:
+
+      - type: Alpha Release
+        description: 'Achieved the alpha release'
+        date: '2023-05-01'
+
+      - type: Beta Release
+        description: 'Achieved the beta release'
+        date: '2023-06-01'        
+                     
 # All Tests
-tests:
+test:
 
     label: Testing
     guidance: http://example.com/guidance
@@ -179,7 +261,7 @@ tests:
           collection: 'https://www.postman.com/collection'
 
 # All Monitors
-monitors:
+monitor:
 
     label: Monitors
     elements:              
@@ -215,135 +297,85 @@ monitors:
           environment: 'https://www.postman.com/environment'                  
 
 # Observability
-observability:
+observe:          
 
-    label: Observability
-    elements:              
+  - type: reports
+    title: Report Dashboard
+    url: 'https://example.com/reports' 
 
-        - type: reports
-          title: Report Dashboard
-          url: 'https://example.com/reports' 
+  - type: change-log
+    title: Change Log
+    url: 'https://example.com/change-log'      
 
-        - type: change-log
-          title: Change Log
-          url: 'https://example.com/change-log'      
+  - type: activity
+    title: Activity
+    url: 'https://example.com/activity'     
 
-        - type: activity
-          title: Activity
-          url: 'https://example.com/activity'     
+  - type: apm
+    title: Datadog
+    url: 'https://datadog.com/dashboard'   
+    sync: true   
 
-        - type: apm
-          title: Datadog
-          url: 'https://datadog.com/dashboard'   
-          sync: true   
+  - type: aws-api-gateway
+    title: Gateway Usage Report
+    url: ' https://uab3sjk0mna.execute-api.us-east-1.amazonaws.com/usage'  
+    sync: true                    
 
-        - type: aws-api-gateway
-          title: Gateway Usage Report
-          url: ' https://uab3sjk0mna.execute-api.us-east-1.amazonaws.com/usage'  
-          sync: true                    
+  - type: uptime
+    title: Uptime Monitor Results
+    url: 'https://example.com/monitor/results'
 
-        - type: uptime
-          title: Uptime Monitor Results
-          url: 'https://example.com/monitor/results'
+  - type: security
+    title: Recurring Security Testing Monitor Results
+    url: 'https://example.com/monitor/results'
 
-        - type: security
-          title: Recurring Security Testing Monitor Results
-          url: 'https://example.com/monitor/results'
+  - type: contract
+    title: Contract Testing Monitor Results
+    url: 'https://example.com/monitor/results'                                   
 
-        - type: contract
-          title: Contract Testing Monitor Results
-          url: 'https://example.com/monitor/results'                                   
+  - type: performance
+    title: US East Regional Performance Testing Monitor Results
+    url: 'https://example.com/monitor/results'
 
-        - type: performance
-          title: US East Regional Performance Testing Monitor Results
-          url: 'https://example.com/monitor/results'
-
-        - type: performance
-          title: US West Regional Performance Testing Monitor Results
-          url: 'https://example.com/monitor/results'                                                
+  - type: performance
+    title: US West Regional Performance Testing Monitor Results
+    url: 'https://example.com/monitor/results'                                                
 
 # Discovery
-discovery:
+distribute:                                                         
 
-    label: Discovery
-    elements:                                             
-
-        - type: workspace
-          title: Private Workspace
-          url: 'https://example.com/private-workspace'                  
-
-        - type: portal
-          title: Public Portal
-          url: 'https://example.com/public-portal'                 
+  - type: portal
+    title: Public Portal
+    url: 'https://example.com/public-portal'                 
 
 # Governance
-governance:
+govern:
 
-    label: Governance
-    rules:              
+  - type: lifecycle-rules
+    title: Lifecycle Rules
+    description: Spectral rules governing this APIs JSON/YAML definition.
+    url: 'https://example.com/design-rules' 
 
-        - type: lifecycle-rules
-          title: Lifecycle Rules
-          description: Spectral rules governing this APIs JSON/YAML definition.
-          url: 'https://example.com/design-rules' 
+  - type: design-rules
+    title: Design Rules
+    description: Spectral rules governing the design of the API using OpenAPI.
+    url: 'https://example.com/design-rules'    
 
-        - type: design-rules
-          title: Design Rules
-          description: Spectral rules governing the design of the API using OpenAPI.
-          url: 'https://example.com/design-rules'    
+  - type: management-rules
+    title: Management Rules
+    description: Spectral rules governing the gateway and related operations.
+    url: 'https://example.com/management-rules'                       
 
-        - type: management-rules
-          title: Management Rules
-          description: Spectral rules governing the gateway and related operations.
-          url: 'https://example.com/management-rules'                       
+  - type: documentation-rules
+    title: Documentation Rules
+    description: Spectral rules that ensure documentation is rich and complete.
+    url: 'https://example.com/documentation-rules'   
 
-        - type: documentation-rules
-          title: Documentation Rules
-          description: Spectral rules that ensure documentation is rich and complete.
-          url: 'https://example.com/documentation-rules'   
+  - type: testing-rules
+    title: Testing Rules
+    description: Spectralrules that ensure testing is in place and operating.
+    url: 'https://example.com/testing-rules'                                                    
 
-        - type: testing-rules
-          title: Testing Rules
-          description: Spectralrules that ensure testing is in place and operating.
-          url: 'https://example.com/testing-rules'                                                    
-
-# Milestones for the API (Achieved and Target)
-milestones:
-
-    # Design
-    - type: design
-      description: 'Design agreed upon by stakeholders.'
-      date: '2021-05-01'
-
-    # Design Review
-    - type: design-review
-      description: 'Went through design review.'
-      date: '2021-06-01'          
-
-    # Staging
-    - type: staging
-      description: 'Left staging phase of development.'
-      date: '2021-07-01'
-
-    # Security Review
-    - type: security-review
-      description: 'Went through security review.'
-      date: '2021-06-01'           
-
-    # Active
-    - type: active
-      description: 'Put into production as active API.'
-      date: '2021-07-15'   
-
-    # Retire
-    - type: retire
-      description: 'Planned retirement date.'
-      date: '2025-07-15'                            
-
-    # Deprecation
-    - type: deprecation
-      description: 'Planned deprecation date.'
-      date: '2025-12-15'
 
 # General Support for the API
 contact:
