@@ -1,0 +1,82 @@
+---
+# APIs JSON/YAML Specification Details
+specificationVersion: '0.1'
+specificationType: 'AI'
+
+# Overview of this API
+name: Example API
+description: This is an APIs JSON/YAML focused on providing inputs for AI / ML.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: http://example.com/apis.json
+
+# Tags for helping organize
+tags:
+  - Application Programming Interface
+  - API
+  - AI
+  - ML
+
+# Time frame for API evolution
+created: '2023-07-19'
+modified: '2023-07-19'
+
+# Contracts 
+contracts:
+
+  openapi:
+    
+    version: 3.1
+    url: https://example.com/openapi
+
+environments: 
+
+    # Environment for development
+    - name: North America
+      region: us
+      url: 'https://www.postman.com/environment'  
+      variables:
+          base_url: 'http://example.com/development'       
+          api_key: 'xe3847d3J78393jkdm1123'  
+
+    # Environment for production
+    - name: Europe
+      region: eu
+      url: 'https://www.postman.com/environment'  
+      variables:
+          base_url: 'http://example.com/production'       
+          api_key: 'xe3847d3J78393jkdm1123'   
+
+# Governance
+policies:        
+
+    - type: lifecycle-rules
+      title: Lifecycle Rules
+      description: Spectral rules governing this APIs JSON/YAML definition.
+      url: 'https://example.com/design-rules' 
+
+    - type: design-rules
+      title: Design Rules
+      description: Spectral rules governing the design of the API using OpenAPI.
+      url: 'https://example.com/design-rules'  
+
+provenance: 
+
+    # Information Source
+    - name: Source One
+      url: 'https://www.postman.com/environment'  
+
+    # Information Source
+    - name: Source Two
+      url: 'https://www.postman.com/environment'  
+            
+
+# Other Related APIs to Include
+include:
+  - name: Another Example API
+    url: http://example.com/apis.json
+
+# Who is Maintaining this APIs JSON/YAML
+maintainers:
+  - FN: Kin Lane
+    X-twitter: apievangelist
+    email: info@apievangelist.com

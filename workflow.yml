@@ -1,0 +1,143 @@
+---
+# APIs JSON/YAML Specification Details
+specificationVersion: '0.1'
+specificationType: 'Workflow'
+
+# Overview of this API
+name: Example API
+description: This is an example APIS JSON/YAML dedicated to a specific workflow using multiple APIs.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: http://example.com/apis.json
+
+# Tags for helping organize
+tags:
+  - Application Programming Interface
+  - API
+
+# Time frame for API evolution
+created: '2023-07-19'
+modified: '2023-07-19'
+
+# Elements of APIs
+apis:
+
+  # First Step in Workflow
+  - name: Example API
+    description: This provides details about a specific API, telling what is possible.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: http://example.com
+    baseURL: http://api.example.com
+
+    sort: 1
+
+    tags:
+      - API
+      - Application Programming Interface
+
+    properties:
+      - type: x-signup
+        url: https://example.com/signup
+      - type: x-documentation
+        url: https://example.com/documentation
+      - type: x-openapi
+        url: http://example.com/openapi.json
+      - type: x-json-schema
+        url: http://example.com/json-schema.json
+
+    contact:
+    - FN: APIs.json
+      email: info@apisjson.org
+      X-twitter: apisjson
+
+  # Second Step in Workflow
+  - name: Example API
+    description: This provides details about a specific API, telling what is possible.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: http://example.com
+    baseURL: http://api.example.com
+
+    mapping:
+
+      - in: $.contact.address
+        out: $.profile.address1
+      - in: $.contact.city
+        out: $.profile.city
+      - in: $.contact.state
+        out: $.profile.state
+      - in: $.contact.postal_code
+        out: $.profile.zip                        
+
+    sort: 2
+
+    tags:
+      - API
+      - Application Programming Interface
+
+    properties:
+      - type: x-signup
+        url: https://example.com/signup
+      - type: x-documentation
+        url: https://example.com/documentation
+      - type: x-openapi
+        url: http://example.com/openapi.json
+      - type: x-json-schema
+        url: http://example.com/json-schema.json
+
+    contact:
+    - FN: APIs.json
+      email: info@apisjson.org
+      X-twitter: apisjson      
+
+  # Third Step in Workflow
+  - name: Example API
+    description: This provides details about a specific API, telling what is possible.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: http://example.com
+    baseURL: http://api.example.com
+
+    mapping:
+
+      - in: $.order.amount
+        out: $.sale.price
+      - in: $.order.date
+        out: $.sale.date                        
+
+    sort: 3
+
+    tags:
+      - API
+      - Application Programming Interface
+
+    properties:
+      - type: x-signup
+        url: https://example.com/signup
+      - type: x-documentation
+        url: https://example.com/documentation
+      - type: x-openapi
+        url: http://example.com/openapi.json
+      - type: x-json-schema
+        url: http://example.com/json-schema.json
+
+    contact:
+    - FN: APIs.json
+      email: info@apisjson.org
+      X-twitter: apisjson     
+
+# Centralized Elements
+elements:
+
+  - type: x-documentation
+    url: https://example.com/documentation     
+  - type: x-video
+    url: https://example.com/video      
+
+# Other Related APIs to Include
+include:
+  - name: Another Example API
+    url: http://example.com/apis.json
+
+# Who is Maintaining this APIs JSON/YAML
+maintainers:
+  - FN: Kin Lane
+    X-twitter: apievangelist
+    email: info@apievangelist.com

@@ -1,0 +1,362 @@
+---
+# APIs JSON/YAML Specification Details
+specificationVersion: '0.1'
+specificationType: 'Product'
+
+# Overview of this API
+name: API Product
+description: This is an APIs JSON/YAML definition providing a product view of a single API, providing a template of possibly building blocks that can be used to govern the consistent delivery of digital API products.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: http://example.com/apis.json
+
+# Tags for helping organize
+tags:
+- Application Programming Interface
+- API
+
+# Time frame for API evolution
+created: '2023-07-19'
+modified: '2023-07-19'
+
+# Design
+# Pre-Release    
+# Active
+# Recommended
+# Retired
+# Deprecated
+maturity: 'Active'
+
+# Public
+# Partner
+# Internal
+# Group
+# Team
+access: 'Internal'
+
+approach:
+
+  - design-led
+  - code-led
+  - proxy-led
+  - prototype-led
+
+protocols:
+
+  - HTTP
+  - TCP
+  - MQTT
+
+patterns:
+
+  - REST
+  - SOAP
+  - GraphQL
+  - Websockets
+  - gRPC
+
+domains:
+
+  - name: example.com    
+
+regions:
+
+  - name: us-west
+  - name: us-east      
+
+requirements:
+
+  - type: business
+    description: This provides an overview of what the API should do.
+    url: http://example.com/business/requirements/
+
+  - type: security
+    description: This provides details on the security of the API.
+    url: http://example.com/security/requirements/        
+
+workspaces:
+
+  vendor: Postman
+  title: Workspace
+  type: Producer
+  url: 'https:/postman.com/workspace'
+
+source_control:
+
+  vendor: GitHub
+  branch: main
+  title: Github Repository
+  url: 'https://github.com/org/repo'
+  sync: true
+
+policies:
+
+    label: Policies
+    product_rules: 'https://example.com/product-rules'  
+    design_rules: 'https://example.com/design-rules'    
+    management_rules: 'https://example.com/management-rules'                       
+    documentation_rules: 'https://example.com/documentation-rules'   
+    testing_rules: 'https://example.com/testing-rules'                                                    
+
+# Contracts 
+contracts:
+
+  openapi:
+    
+    version: 3.1
+    url: https://example.com/openapi
+
+  asyncapi:
+    
+    version: 2.0
+    url: https://example.com/asyncapi    
+
+# Mock servers
+mocks:
+
+  - type: sandbox
+    title: Sandbox Mock
+    url: 'https://example.com/mock'
+    collection: 'https://www.postman.com/collection'    
+
+  - type: workshop
+    title: Workshop Mock
+    url: 'https://example.com/mock'
+    collection: 'https://www.postman.com/collection'           
+
+# Documentation
+documentation:
+
+  - type: reference
+    title: Reference Documentation
+    url: 'https://example.com/documentation'
+    collection: 'https://www.example.com/reference-documentation/'
+
+  - type: onboarding
+    title: Onboarding Documentation
+    url: 'https://example.com/documentation'
+    collection: 'https://www.example.com/onboarding-documentation/'                 
+
+  - type: workflow
+    title: Business Workflow Documentation
+    url: 'https://example.com/documentation'
+    collection: 'https://www.example.com/workflow-documentation/'
+
+# Change Management
+change:
+
+  versions:
+    current: 'http://example.com/next'
+    next: 'http://example.com/next'
+    previous: 'http://example.com/next'
+
+  elements:
+
+    - type: change-log
+      title: Change Log
+      url: 'https://example.com/change-log'      
+
+    - type: road-map
+      title: Road Map
+      url: 'https://example.com/road-map'                   
+
+
+# Deployment
+deployment:
+
+  label: Deployment
+  description: The deployment of code and artifacts, and gateway configuration and policies.
+  guidance: http://example.com/guidance
+
+  pipeline:
+    title: Github Action
+    url: 'https://github.com/org/repo/actions'       
+
+  gateway:
+    title: AWS API Gateway
+    url: ' https://uab3sjk0mna.execute-api.us-east-1.amazonaws.com'            
+    sync: true
+
+# Environments
+environments: 
+
+  - name: Development
+    url: 'https://www.postman.com/environment'  
+    variables:
+        base_url: 'http://example.com/development'       
+        api_key: 'xe3847d3J78393jkdm1123'  
+
+  - name: Staging
+    url: 'https://www.postman.com/environment'  
+    variables:
+        base_url: 'http://example.com/staging'       
+        api_key: 'xe3847d3J78393jkdm1123'            
+
+  - name: Production
+    url: 'https://www.postman.com/environment'  
+    variables:
+        base_url: 'http://example.com/production'       
+        api_key: 'xe3847d3J78393jkdm1123'   
+
+# Management
+management:
+
+  label: Manage
+  guidance: http://example.com/guidance
+  elements:     
+
+      # Onboarding
+      - type: onboarding
+        title: Login / Registration
+        url: 'https://example.com/login'                           
+
+      # Plans
+      - type: aws-api-gateway-plan
+        title: Plan
+        url: 'https://console.aws.amazon.com/apigateway/home?#/usage-plans/'                              
+
+      # Keys
+      - type: aws-api-gateway-keys
+        title: Plan
+        url: 'https://console.aws.amazon.com/apigateway/home?#/keys/'              
+
+# SDKs
+sdks:
+
+  label: SDKs
+  guidance: http://example.com/guidance
+  elements:     
+
+      # Python
+      - language: python
+        type: client
+        title: Python Library
+        url: 'https://github.com/sdks/python'                           
+
+      # Node.js
+      - language: node.js
+        type: client
+        title: Node.js Library
+        url: 'https://github.com/sdks/nodejs'   
+
+      # Go
+      - language: go
+        type: client
+        title: Go Library
+        url: 'https://github.com/sdks/go'                        
+
+# All Tests
+tests:
+
+  label: Testing
+  guidance: http://example.com/guidance
+  elements:              
+
+      - type: contract
+        title: Contract Testing
+        url: 'https://example.com/contract-testing'
+        collection: 'https://www.postman.com/collection'
+        pipeline: true
+
+      - type: integration
+        title: Integration Testing
+        url: 'https://example.com/integration-testing'
+        collection: 'https://www.postman.com/collection'
+        pipeline: true        
+
+      - type: performance
+        title: Performance Testing
+        url: 'https://example.com/performance-testing'
+        collection: 'https://www.postman.com/collection'
+        pipeline: false
+
+# Security
+security:
+
+  acess: public
+  tests:  
+
+      - type: security
+        title: OWASP Top 10
+        url: 'https://example.com/owasp-security-testing'
+        collection: 'https://www.postman.com/collection'
+        pipeline: true
+
+rbac:  
+
+  url: 'https://example.com/owasp-security-testing'        
+
+# All Monitors
+monitors:
+
+  - type: uptime
+    title: Uptime Monitor
+    url: 'https://example.com/monitor'
+    collection: 'https://www.postman.com/collection'
+    environment: 'https://www.postman.com/environment'
+
+  - type: security
+    title: Recurring Security Testing Monitor
+    url: 'https://example.com/monitor'
+    collection: 'https://www.postman.com/collection'
+    environment: 'https://www.postman.com/environment'
+
+  - type: contract
+    title: Contract Testing Monitor
+    url: 'https://example.com/monitor'
+    collection: 'https://www.postman.com/collection'
+    environment: 'https://www.postman.com/environment'                                    
+
+  - type: performance
+    title: US East Regional Performance Testing Monitor
+    url: 'https://example.com/monitor'
+    collection: 'https://www.postman.com/collection'
+    environment: 'https://www.postman.com/environment'
+
+  - type: performance
+    title: US West Regional Performance Testing Monitor
+    url: 'https://example.com/monitor'
+    collection: 'https://www.postman.com/collection'
+    environment: 'https://www.postman.com/environment'                  
+
+# Observability
+observability:
+
+  reports: 'https://example.com/reports'            
+  activity: 'https://example.com/activity'     
+  apm: 'https://datadog.com/dashboard'   
+  gateway: 'https://uab3sjk0mna.execute-api.us-east-1.amazonaws.com/usage'  
+  status: 'https://example.com/monitor/results'
+
+# Distribution
+distribution:
+                            
+  developer_portal: 'https://example.com/pdeveloper-portal'    
+  private_workspace: 'https://example.com/private-workspace'                  
+  public_workspace: 'https://example.com/public-workspace'                 
+
+# Blogs
+blog_posts:
+
+  - title: Blog Post
+    description: The description of the post.
+    url: 'https://github.com/issues'
+
+# Videos
+videos:
+
+  - title: Blog Post
+    description: The description of the post.
+    url: 'https://github.com/issues'      
+
+# Feedback Loop
+feedback:
+
+  - type: issues
+    vendor: GitHub
+    title: GitHub Issues
+    url: 'https://github.com/issues'
+
+  - type: email
+    vendor: Email
+    title: Email
+    url: 'mailto:info@example.com'    

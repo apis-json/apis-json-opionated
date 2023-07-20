@@ -1,0 +1,59 @@
+---
+# APIs JSON/YAML Specification Details
+specificationVersion: '0.14'
+
+# Overview of this API
+name: Example API
+description: This is an example APIs.json file, demonstrating what is possible with
+  the API discovery specification.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: http://example.com/apis.json
+
+# Tags for helping organize
+tags:
+  - Application Programming Interface
+  - API
+
+# Time frame for API evolution
+created: '2014-04-07'
+modified: '2020-09-03'
+
+# Elements of APIs
+apis:
+
+  - name: Example API
+    description: This provides details about a specific API, telling what is possible.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: http://example.com
+    baseURL: http://api.example.com
+    tags:
+    - API
+    - Application Programming Interface
+    properties:
+    - type: x-signup
+      url: https://example.com/signup
+    - type: x-documentation
+      url: https://example.com/documentation
+    - type: x-openapi
+      url: http://example.com/openapi.json
+    - type: x-json-schema
+      url: http://example.com/json-schema.json
+    - type: x-blog
+      url: http://example.com/blog
+    - type: pricing
+      url: http://example.com/pricing
+    contact:
+    - FN: APIs.json
+      email: info@apisjson.org
+      X-twitter: apisjson
+
+# Other Related APIs to Include
+include:
+  - name: Another Example API
+    url: http://example.com/apis.json
+
+# Who is Maintaining this APIs JSON/YAML
+maintainers:
+  - FN: Kin Lane
+    X-twitter: apievangelist
+    email: info@apievangelist.com
