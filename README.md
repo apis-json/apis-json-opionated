@@ -1,5 +1,5 @@
-# Opinoated APIs.json
-Since 2014, I have gotten more opinionated about APIs.json. I have learned a lot from creating APIs.json indexes for public and private APIs, learning what building blocks matter the most. 
+# Opinionated APIs.json
+Since 2014 I have gotten more opinionated about APIs.json. I have learned a lot from creating APIs.json indexes for public and private APIs, learning what building blocks matter the most to both public and private APIs--these variations are my attempt at proposing what could be next.
 
 Here are the different types of APIs.json I am experimenting with.
 
