@@ -28,6 +28,15 @@ apis:
     humanURL: http://example.com
     baseURL: http://api.example.com
 
+    mapping:
+
+      - in: $.data.token
+        out: $header.Authorization
+      - in: $.data.region
+        out: $header.region
+      - in: $.data.version
+        out: $header.Version                   
+
     sort: 1
 
     tags:
@@ -121,7 +130,36 @@ apis:
     contact:
     - FN: APIs.json
       email: info@apisjson.org
-      X-twitter: apisjson     
+      X-twitter: apisjson   
+
+# Governance
+govern:
+
+  - type: lifecycle-rules
+    title: Lifecycle Rules
+    description: Spectral rules governing this APIs JSON/YAML definition.
+    url: 'https://example.com/design-rules' 
+
+  - type: design-rules
+    title: Design Rules
+    description: Spectral rules governing the design of the API using OpenAPI.
+    url: 'https://example.com/design-rules'          
+
+# Data Storage to seed workflows
+data:
+
+  store:
+
+    token: a334adfaf333234
+    region: us-east1
+    version: v1
+
+    addresses:
+
+      - address: 345 Broadway
+        city: New York
+        state: New York
+        postal: 10019
 
 # Centralized Elements
 elements:

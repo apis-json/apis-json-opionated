@@ -23,12 +23,18 @@ modified: '2023-07-19'
 # Contracts 
 contracts:
 
+  guidance: https://example.com/governance/guidance/
+
   openapi:
     
     version: 3.1
     url: https://example.com/openapi
 
 environments: 
+
+  guidance: https://example.com/environment/guidance/
+
+  ares:
 
     # Environment for development
     - name: North America
@@ -47,7 +53,11 @@ environments:
           api_key: 'xe3847d3J78393jkdm1123'   
 
 # Governance
-policies:        
+governance:        
+
+  guidance: https://example.com/governance/guidance/
+
+  ares:
 
     - type: lifecycle-rules
       title: Lifecycle Rules
@@ -61,15 +71,38 @@ policies:
 
 provenance: 
 
-    # Information Source
-    - name: Source One
-      url: 'https://www.postman.com/environment'  
+  guidance: https://example.com/provenance/guidance/
 
-    # Information Source
-    - name: Source Two
-      url: 'https://www.postman.com/environment'  
-            
+  ares:
 
+    - type: lifecycle-rules
+      title: Lifecycle Rules
+      description: Spectral rules governing this APIs JSON/YAML definition.
+      url: 'https://example.com/design-rules' 
+
+    - type: design-rules
+      title: Design Rules
+      description: Spectral rules governing the design of the API using OpenAPI.
+      url: 'https://example.com/design-rules'
+
+# The legal department
+legal:
+
+  guidance: https://example.com/provenance/guidance/
+
+  ares:
+
+    - type: terms-of-service
+      title: Terms of Service
+      description: The terms of use for the API being applied.
+      url: 'https://example.com/tos/' 
+
+    - type: api-commons
+      title: API Commons
+      description: The API commons license for the API>
+      url: 'https://example.com/api-commons-license/'       
+
+              
 # Other Related APIs to Include
 include:
   - name: Another Example API
@@ -77,6 +110,7 @@ include:
 
 # Who is Maintaining this APIs JSON/YAML
 maintainers:
+
   - FN: Kin Lane
     X-twitter: apievangelist
     email: info@apievangelist.com

@@ -20,6 +20,8 @@ modified: '2023-07-19'
 
 define:
 
+  guidance: https://example.com/define/guidance/
+
   # Navigating Change
   version:
       current: 'http://example.com/next'
@@ -101,6 +103,8 @@ define:
 # Designing before we develop
 design:
 
+  guidance: https://example.com/design/guidance/
+
   # All Mocks
   mock:           
 
@@ -131,19 +135,18 @@ design:
       collection: 'https://www.postman.com/collection'
 
 # Deployment
-develop:         
+develop:    
 
-    # GitHub Repository
-    - type: github
-      title: Github Repository
-      branch: master
-      url: 'https://github.com/org/repo'
-      sync: true
+  guidance: https://example.com/develop/guidance/
+
+  pipelines:
 
     # Pipeline
     - type: github-action
       title: Github Action
       url: 'https://github.com/org/repo/actions'       
+
+  gateway:
 
     # Gateway
     - type: aws-api-gateway
@@ -154,6 +157,8 @@ develop:
 
 # Management
 manage:
+
+  guidance: https://example.com/management/guidance/
 
   onboarding:
 
@@ -233,161 +238,179 @@ manage:
       - type: Alpha Release
         description: 'Achieved the alpha release'
         date: '2023-05-01'
+        url: http://example.com/changelog/
 
       - type: Beta Release
         description: 'Achieved the beta release'
         date: '2023-06-01'        
+        url: http://example.com/changelog/
                      
 # All Tests
 test:
 
-    label: Testing
-    guidance: http://example.com/guidance
-    elements:              
+  guidance: https://example.com/test/guidance/
 
-        - type: contract
-          title: Contract Testing
-          url: 'https://example.com/contract-testing'
-          collection: 'https://www.postman.com/collection'
+  areas:
 
-        - type: performance
-          title: Performance Testing
-          url: 'https://example.com/performance-testing'
-          collection: 'https://www.postman.com/collection'
+    - type: contract
+      title: Contract Testing
+      url: 'https://example.com/contract-testing'
+      collection: 'https://www.postman.com/collection'
 
-        - type: security
-          title: OWASP Top 10
-          url: 'https://example.com/owasp-security-testing'
-          collection: 'https://www.postman.com/collection'
+    - type: performance
+      title: Performance Testing
+      url: 'https://example.com/performance-testing'
+      collection: 'https://www.postman.com/collection'
+
+    - type: security
+      title: OWASP Top 10
+      url: 'https://example.com/owasp-security-testing'
+      collection: 'https://www.postman.com/collection'
 
 # All Monitors
 monitor:
 
-    label: Monitors
-    elements:              
+  guidance: https://example.com/monitor/guidance/
 
-        - type: uptime
-          title: Uptime Monitor
-          url: 'https://example.com/monitor'
-          collection: 'https://www.postman.com/collection'
-          environment: 'https://www.postman.com/environment'
+  areas:              
 
-        - type: security
-          title: Recurring Security Testing Monitor
-          url: 'https://example.com/monitor'
-          collection: 'https://www.postman.com/collection'
-          environment: 'https://www.postman.com/environment'
+      - type: uptime
+        title: Uptime Monitor
+        url: 'https://example.com/monitor'
+        collection: 'https://www.postman.com/collection'
+        environment: 'https://www.postman.com/environment'
 
-        - type: contract
-          title: Contract Testing Monitor
-          url: 'https://example.com/monitor'
-          collection: 'https://www.postman.com/collection'
-          environment: 'https://www.postman.com/environment'                                    
+      - type: security
+        title: Recurring Security Testing Monitor
+        url: 'https://example.com/monitor'
+        collection: 'https://www.postman.com/collection'
+        environment: 'https://www.postman.com/environment'
 
-        - type: performance
-          title: US East Regional Performance Testing Monitor
-          url: 'https://example.com/monitor'
-          collection: 'https://www.postman.com/collection'
-          environment: 'https://www.postman.com/environment'
+      - type: contract
+        title: Contract Testing Monitor
+        url: 'https://example.com/monitor'
+        collection: 'https://www.postman.com/collection'
+        environment: 'https://www.postman.com/environment'                                    
 
-        - type: performance
-          title: US West Regional Performance Testing Monitor
-          url: 'https://example.com/monitor'
-          collection: 'https://www.postman.com/collection'
-          environment: 'https://www.postman.com/environment'                  
+      - type: performance
+        title: US East Regional Performance Testing Monitor
+        url: 'https://example.com/monitor'
+        collection: 'https://www.postman.com/collection'
+        environment: 'https://www.postman.com/environment'
+
+      - type: performance
+        title: US West Regional Performance Testing Monitor
+        url: 'https://example.com/monitor'
+        collection: 'https://www.postman.com/collection'
+        environment: 'https://www.postman.com/environment'                  
 
 # Observability
 observe:          
 
-  - type: reports
-    title: Report Dashboard
-    url: 'https://example.com/reports' 
+  guidance: https://example.com/observe/guidance/
 
-  - type: change-log
-    title: Change Log
-    url: 'https://example.com/change-log'      
+  areas:
 
-  - type: activity
-    title: Activity
-    url: 'https://example.com/activity'     
+    - type: reports
+      title: Report Dashboard
+      url: 'https://example.com/reports' 
 
-  - type: apm
-    title: Datadog
-    url: 'https://datadog.com/dashboard'   
-    sync: true   
+    - type: change-log
+      title: Change Log
+      url: 'https://example.com/change-log'      
 
-  - type: aws-api-gateway
-    title: Gateway Usage Report
-    url: ' https://uab3sjk0mna.execute-api.us-east-1.amazonaws.com/usage'  
-    sync: true                    
+    - type: activity
+      title: Activity
+      url: 'https://example.com/activity'     
 
-  - type: uptime
-    title: Uptime Monitor Results
-    url: 'https://example.com/monitor/results'
+    - type: apm
+      title: Datadog
+      url: 'https://datadog.com/dashboard'   
+      sync: true   
 
-  - type: security
-    title: Recurring Security Testing Monitor Results
-    url: 'https://example.com/monitor/results'
+    - type: aws-api-gateway
+      title: Gateway Usage Report
+      url: ' https://uab3sjk0mna.execute-api.us-east-1.amazonaws.com/usage'  
+      sync: true                    
 
-  - type: contract
-    title: Contract Testing Monitor Results
-    url: 'https://example.com/monitor/results'                                   
+    - type: uptime
+      title: Uptime Monitor Results
+      url: 'https://example.com/monitor/results'
 
-  - type: performance
-    title: US East Regional Performance Testing Monitor Results
-    url: 'https://example.com/monitor/results'
+    - type: security
+      title: Recurring Security Testing Monitor Results
+      url: 'https://example.com/monitor/results'
 
-  - type: performance
-    title: US West Regional Performance Testing Monitor Results
-    url: 'https://example.com/monitor/results'                                                
+    - type: contract
+      title: Contract Testing Monitor Results
+      url: 'https://example.com/monitor/results'                                   
+
+    - type: performance
+      title: US East Regional Performance Testing Monitor Results
+      url: 'https://example.com/monitor/results'
+
+    - type: performance
+      title: US West Regional Performance Testing Monitor Results
+      url: 'https://example.com/monitor/results'                                                
 
 # Discovery
-distribute:                                                         
+distribute:            
 
-  - type: portal
-    title: Public Portal
-    url: 'https://example.com/public-portal'                 
+  guidance: https://example.com/distribute/guidance/
+
+  ares:
+
+    - type: portal
+      title: Public Portal
+      url: 'https://example.com/public-portal'                 
 
 # Governance
 govern:
 
-  - type: lifecycle-rules
-    title: Lifecycle Rules
-    description: Spectral rules governing this APIs JSON/YAML definition.
-    url: 'https://example.com/design-rules' 
+  guidance: https://example.com/governance/guidance/
 
-  - type: design-rules
-    title: Design Rules
-    description: Spectral rules governing the design of the API using OpenAPI.
-    url: 'https://example.com/design-rules'    
+  ares:
 
-  - type: management-rules
-    title: Management Rules
-    description: Spectral rules governing the gateway and related operations.
-    url: 'https://example.com/management-rules'                       
+    - type: lifecycle-rules
+      title: Lifecycle Rules
+      description: Spectral rules governing this APIs JSON/YAML definition.
+      url: 'https://example.com/design-rules' 
 
-  - type: documentation-rules
-    title: Documentation Rules
-    description: Spectral rules that ensure documentation is rich and complete.
-    url: 'https://example.com/documentation-rules'   
+    - type: design-rules
+      title: Design Rules
+      description: Spectral rules governing the design of the API using OpenAPI.
+      url: 'https://example.com/design-rules'    
 
-  - type: testing-rules
-    title: Testing Rules
-    description: Spectralrules that ensure testing is in place and operating.
-    url: 'https://example.com/testing-rules'                                                    
+    - type: management-rules
+      title: Management Rules
+      description: Spectral rules governing the gateway and related operations.
+      url: 'https://example.com/management-rules'                       
 
+    - type: documentation-rules
+      title: Documentation Rules
+      description: Spectral rules that ensure documentation is rich and complete.
+      url: 'https://example.com/documentation-rules'   
 
-# General Support for the API
-contact:
-- FN: APIs.json
-  email: info@apisjson.org
-  url: https://example.com/contact/
+    - type: testing-rules
+      title: Testing Rules
+      description: Spectralrules that ensure testing is in place and operating.
+      url: 'https://example.com/testing-rules'                                                    
 
-# Who is Maintaining this APIs JSON/YAML
-maintainers:
-- FN: Kin Lane
-  X-twitter: apievangelist
-  email: info@apievangelist.com  
+support:
+
+  # General Support for the API
+  contact:
+
+    - FN: APIs.json
+      email: info@apisjson.org
+      url: https://example.com/contact/
+
+  # Who is Maintaining this APIs JSON/YAML
+  maintainers:
+
+    - FN: Kin Lane
+      X-twitter: apievangelist
+      email: info@apievangelist.com  
 
 # Other Related APIs to Include
 include:
